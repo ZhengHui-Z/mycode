@@ -7,29 +7,27 @@ using namespace std;
 
 typedef struct Node
 {
-	int data;
+    int data;
+    //struct Node *next;
 }Node;
-
+typedef struct Node *LinkList;
 int main(int argc, char const *argv[])
 {
-	
-	int *test;
+	///普通指针
+	/*int *test;
 	int i = 12;
 	test = &i;
 	*test = 666;
-	int *addr;
-	addr = (int *)6618700;
-	printf("%d\n", (*test));
-	printf("i1 = %d\n", i);
-	printf("i2 = %d\n", (int *)&i);
-	printf("addr = %d\n",*addr);
-
-	Node *a;
-	//*a = malloc(sizeof(Node))
+	cout<<"test = "<<test<<endl;
+	cout<<"&i = "<<&i<<endl;*/
+	///结构体指针
+	LinkList a;
+	a = (LinkList)malloc(sizeof(Node));
 	a->data = 123;
-	printf("Node_addr = %d\n",&(a->data));
-	printf("Node = %d\n",(*a).data );
+	cout<<"addr = "<< (int *)a <<endl;
+	cout<<"data = "<< a->data <<endl;
 
+	free(a);
 
 	return 0;
 }
